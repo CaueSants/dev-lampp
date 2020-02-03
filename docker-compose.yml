@@ -1,0 +1,31 @@
+version: '3.5'
+services:
+  
+  php-apache:
+    image: cauesantos/php7.3-apache
+    restart: on-failure
+    env_file:
+      - .env
+    volumes:
+      - ./www/:/var/www/app
+    ports:
+      - 80:80
+  
+  mysql:
+    image: mysql:5.7
+    restart: on-failure
+    env_file:
+      - .env
+    ports:
+      - ${MYSQL_PORT}:${MYSQL_PORT}
+    volumes:
+      - "./database/database.sql:/docker-entrypoint-initdb.d/database.sql"
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - ${PMA_PORT}:80
+    links:
+      - "mysql:db"
+    environment:
+      - "PMA_HOST:db"
