@@ -1,0 +1,15 @@
+{
+    "name": "cauesantos/dev-lampp",
+    "description": "Dev ambience with PHP 7.3, Apache and Mysql 5.7.",
+    "authors": [
+        {
+            "name": "Caue Santos",
+            "email": "caue.sants@icloud.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "model\\": "src/"
+      }
+    }
+}
