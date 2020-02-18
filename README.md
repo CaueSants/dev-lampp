@@ -2,7 +2,7 @@
 #### You must already have the docker and docker-compose installed on your machine
 - Clone this repository to your machine
 ```bash
-git clone https://github.com/CaueSants/dev-lampp.git
+git clone https://github.com/caue-santos/dev-lampp.git
 ```
 ```bash
 cd dev-lampp
